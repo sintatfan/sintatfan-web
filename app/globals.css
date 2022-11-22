@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-    @apply bg-body;
+    @apply bg-body font-sans;
     padding-top: theme('header.expandedHeight');
 }
