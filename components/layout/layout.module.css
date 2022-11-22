@@ -1,0 +1,11 @@
+.header {
+    @apply bg-body/80 backdrop-blur-xl fixed top-0 left-0 right-0;
+    height: theme('header.expandedHeight');
+}
+.headerInner {
+    @apply container;
+}
+
+.footer {
+    @apply container;
+}
