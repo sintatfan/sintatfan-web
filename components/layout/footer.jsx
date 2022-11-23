@@ -1,4 +1,4 @@
-import styles from "./layout.module.css";
+import styles from "./footer.module.css";
 
 export default function PageFooter() {
     return (
