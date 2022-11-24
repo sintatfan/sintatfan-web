@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-body font-sans text-content;
+    @apply bg-body font-sans text-content overflow-x-hidden antialiased;
     padding-top: theme('header.expandedHeight');
 }
 
