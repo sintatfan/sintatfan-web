@@ -12,8 +12,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#F29516',
+        primary: {
+          light: '#FFC345',
+          DEFAULT: '#F29516',
+        },
         body: '#F7F7F7',
+        content: '#333333',
       },
       fontFamily: {
         sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],

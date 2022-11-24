@@ -2,11 +2,11 @@
     height: theme('header.expandedHeight');
 }
 .header a {
-    color: #333333;
+    @apply text-content font-medium;
     transition: color 0.4s;
 }
 .header a:hover {
-    color: theme('colors.primary');
+    @apply text-primary;
 }
 
 .logo {

@@ -10,8 +10,8 @@ export default function PageFooter() {
             </div>
 
             {/* Decoration */}
-            <div className="absolute -bottom-16 -right-1/4">
-                <img src="/images/bg_4pills.svg" alt="" />
+            <div className="absolute bottom-0 -right-1/4 z-0 pointer-events-none overflow-hidden">
+                <img src="/images/bg_4pills.svg" alt="" className="relative top-24" />
             </div>
         </footer>
     );
