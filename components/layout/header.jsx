@@ -7,7 +7,7 @@ export default function PageHeader() {
             <div className="container h-full flex items-center justify-between">
                 {/* Logo */}
                 <a href="#top">
-                    <img src="/logo.svg" alt="" className={styles.logo} />
+                    <img src="/images/logo.svg" alt="" className={styles.logo} />
                 </a>
 
                 {/* Navigation */}
