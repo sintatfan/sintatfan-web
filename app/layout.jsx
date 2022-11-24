@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body className="overflow-x-hidden">
         <PageHeader />
         {children}
         <PageFooter />
