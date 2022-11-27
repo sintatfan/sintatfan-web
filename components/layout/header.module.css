@@ -8,7 +8,14 @@
 .header a:hover {
     @apply text-primary;
 }
+.headerGlassy {
+    height: theme('header.collapsedHeight');
+}
 
 .logo {
     width: 64px;
+    transition: width 0.4s;
+}
+.headerGlassy .logo {
+    width: 36px;
 }
