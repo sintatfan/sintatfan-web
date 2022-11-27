@@ -1,3 +1,5 @@
+import {PillsDecoration} from "../decoration";
+
 export default function SubsectionShare() {
     const photos = [
         { src: '/images/share_workshop1.jpg', src2X: '/images/share_workshop1@2x.jpg', alt: 'I introduced the basic concept of Arduino in an internal workshop', },
@@ -14,9 +16,7 @@ export default function SubsectionShare() {
             <Gallery photos={photos} />
 
             {/* Decoration */}
-            <div className="absolute -bottom-5 -right-1/4 z-[-10] pointer-events-none">
-                <img src="/images/bg_4pills.svg" alt="" className="relative top-24" />
-            </div>
+            <PillsDecoration x="-right-1/4" y="-bottom-20" />
         </div>
     );
 }

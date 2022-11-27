@@ -1,3 +1,5 @@
+import {PillsDecoration} from "../decoration";
+
 export default function PageFooter() {
     return (
         <footer className="relative container">
@@ -10,9 +12,7 @@ export default function PageFooter() {
             </div>
 
             {/* Decoration */}
-            <div className="absolute bottom-0 -right-1/4 z-0 pointer-events-none overflow-hidden">
-                <img src="/images/bg_4pills.svg" alt="" className="relative top-24" />
-            </div>
+            <PillsDecoration x="-right-1/4" y="bottom-0" yOffset={24} />
         </footer>
     );
 }

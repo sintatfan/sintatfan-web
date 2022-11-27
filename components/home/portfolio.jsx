@@ -1,11 +1,14 @@
 import {SectionTitle} from "../title";
 import HorizontalProjectCard from "../portfolio/card_horizontal";
+import {PillsDecoration} from "../decoration";
 
 export default function WorkSection() {
     return (
-        <div className="container-md mb-32">
+        <div className="container-md mb-32 relative">
+            <PillsDecoration x="-right-1/4" y="-top-12" flip />
+
             <SectionTitle>Work</SectionTitle>
-            <p className="mb-8">
+            <p className="mb-8 text-lg">
                 It is always rewarding to help corporations build digital solutions. <br />
                 Check out some of my recent projects and see how I faced these challenges!
             </p>
