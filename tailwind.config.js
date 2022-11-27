@@ -30,8 +30,17 @@ module.exports = {
       dropShadow: {
         'card': '0 10px 20px rgba(200, 200, 200, 0.1)',
         'card-elevated': '0 20px 20px rgba(200, 200, 200, 0.3)',
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.content'),
+          }
+        }
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

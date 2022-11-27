@@ -10,7 +10,7 @@ function NavItem({id, label}) {
 function SocialLink({title, url, icon}) {
     return (
         <li>
-            <a href={url} title={title} target="_blank" rel="noopener noreferrer">
+            <a href={url} title={title} target="_blank" rel="noreferrer">
                 <Icon path={icon} size={1} />
             </a>
         </li>
