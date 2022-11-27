@@ -27,6 +27,10 @@ module.exports = {
         expandedHeight: '146px',
         collapsedHeight: '64px',
       },
+      dropShadow: {
+        'card': '0 10px 20px rgba(200, 200, 200, 0.1)',
+        'card-elevated': '0 20px 20px rgba(200, 200, 200, 0.3)',
+      }
     },
   },
   plugins: [],

@@ -24,4 +24,25 @@ body {
     .h3 {
         @apply font-bold text-3xl;
     }
+
+    /*
+        Button
+     */
+    .btn {
+        @apply font-light rounded-full;
+        transition: background 0.3s, border 0.3s;
+    }
+    .btn svg {
+        display: inline-block;
+    }
+
+    .btn-outline {
+        @apply border border-primary-light text-primary;
+    }
+    .btn-link {
+        @apply text-primary hover:bg-primary-light/10;
+    }
+    .btn-sm {
+        @apply text-sm px-4 py-1.5;
+    }
 }
