@@ -4,7 +4,7 @@ import {PillsDecoration} from "../decoration";
 
 export default function WorkSection() {
     return (
-        <div className="container-md mb-32 relative">
+        <div className="container-md mb-80 relative">
             <PillsDecoration x="-right-1/4" y="-top-12" flip />
 
             <SectionTitle>Work</SectionTitle>
