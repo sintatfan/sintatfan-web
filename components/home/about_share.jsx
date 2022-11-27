@@ -8,7 +8,7 @@ export default function SubsectionShare() {
     ];
 
     return (
-        <div className="mb-48 relative">
+        <div className="mb-24 relative">
             <div className="max-w-2xl mb-9">
                 <h3 className="h3">I share and collaborate.</h3>
                 <p>I hope my teammates can grow together. Other than development, I also worked as a senior position to share my tortor lectus fermentum eros, a varius nisi ex quis orci. Aenean placerat congue auctor. Nulla ullamcorper egestas eros. Aenean nec porttitor arcu.</p>

@@ -1,11 +1,12 @@
 import {SectionTitle} from "../title";
 import HorizontalProjectCard from "../portfolio/card_horizontal";
-import {PillsDecoration} from "../decoration";
+import {LightDecoration, PillsDecoration} from "../decoration";
 
 export default function WorkSection() {
     return (
-        <div className="container-md mb-80 relative">
-            <PillsDecoration x="-right-1/4" y="-top-12" flip />
+        <div className="container-md relative pt-36 mb-80">
+            <PillsDecoration x="-right-1/4" y="top-0" flip />
+            <LightDecoration x="-left-80" y="-top-16" />
 
             <SectionTitle>Work</SectionTitle>
             <p className="mb-8 text-lg">

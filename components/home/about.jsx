@@ -1,9 +1,12 @@
 import {SectionTitle} from "../title";
 import SubsectionShare from "./about_share";
+import {LightDecoration} from "../decoration";
 
 export default function AboutSection() {
     return (
-        <div className="container-md">
+        <div className="container-md relative pt-48">
+            <LightDecoration x="-left-80" y="-top-16" />
+
             <SectionTitle>About</SectionTitle>
 
             <Biography />

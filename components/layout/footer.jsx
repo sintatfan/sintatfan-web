@@ -12,7 +12,7 @@ export default function PageFooter() {
             </div>
 
             {/* Decoration */}
-            <PillsDecoration x="-right-1/4" y="bottom-0" yOffset={24} />
+            <PillsDecoration x="-right-1/4" y="bottom-0" yOffset="top-24" />
         </footer>
     );
 }

@@ -46,3 +46,7 @@ body {
         @apply text-sm px-4 py-1.5;
     }
 }
+
+.light-decoration {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(242, 149, 22, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
