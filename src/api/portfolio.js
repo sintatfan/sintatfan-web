@@ -12,7 +12,8 @@ export function getProjectBySlug(slug, withContent = false) {
     const realSlug = slug.replace(/\.mdx$/, "")
     const fullPath = join(directory, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, "utf8")
-    const md = matter(fileContents, {excerpt: true});
+    const md = matter(fileContents, { sections: true });
+    console.log(md.sections);
 
     const result = {
         meta: {
@@ -22,7 +23,12 @@ export function getProjectBySlug(slug, withContent = false) {
     };
 
     if (withContent) {
-        result.content = md.content;
+        if (md.sections.length > 0) {
+            result.content = md.sections.find(i => i.key === 'content')?.content;
+            result.introduction = md.sections.find(i => i.key === 'introduction')?.content;
+        } else {
+            result.content = md.content;
+        }
     }
 
     return result;

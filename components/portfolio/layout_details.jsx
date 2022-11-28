@@ -4,8 +4,11 @@ import Link from "next/link";
 import Icon from "@mdi/react";
 import {mdiArrowLeft as IconArrowLeft} from "@mdi/js";
 import {PillsDecoration} from "../decoration";
+import {MDXRemote} from "next-mdx-remote";
 
-export function PortfolioDetails({meta, children, related}) {
+export function PortfolioDetails({meta, content, introduction, related}) {
+    const components = {};
+
     return (
         <div className="container-md relative">
             <PillsDecoration x="-left-96" y="-top-80" />
@@ -18,7 +21,7 @@ export function PortfolioDetails({meta, children, related}) {
             <div className="flex justify-between mb-16">
                 <div className="w-6/12">
                     <div className="font-light mb-3">{meta.displayDate}</div>
-                    <div>{meta.excerpt}</div>
+                    <MDXRemote {...introduction} components={components} />
                 </div>
                 <div className="flex-none w-5/12">
                     <ProjectMeta meta={meta} />
@@ -29,7 +32,7 @@ export function PortfolioDetails({meta, children, related}) {
 
             <div className="max-w-3xl mx-auto">
                 <div className="prose max-w-none">
-                    {children}
+                    <MDXRemote {...content} components={components} />
                 </div>
 
                 <hr className="my-12" />

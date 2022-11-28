@@ -4,24 +4,21 @@ import {getAllProjects, getProjectBySlug, getProjectsSlugs} from "../../src/api/
 import matter from "gray-matter";
 import {PortfolioDetails} from "../../components/portfolio/layout_details";
 
-const Page = function ({meta, source, related}) {
-    const components = {};
-
+const Page = function ({meta, contentSource, introductionSource, related}) {
     return (
-        <PortfolioDetails meta={meta} related={related}>
-            <MDXRemote {...source} components={components} />
-        </PortfolioDetails>
+        <PortfolioDetails meta={meta} related={related}
+                          introduction={introductionSource} content={contentSource} />
     );
 };
 
 export async function getStaticProps({ params }) {
     const project = getProjectBySlug(params.slug, true);
-    const mdxSource = await serialize(project.content);
 
     return {
         props: {
             meta: project.meta,
-            source: mdxSource,
+            introductionSource: project.introduction ? await serialize(project.introduction) : null,
+            contentSource: await serialize(project.content),
             related: getAllProjects().filter(i => i.meta.slug !== params.slug).slice(0, 2),
         },
     }
