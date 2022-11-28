@@ -12,10 +12,11 @@ export function getProjectBySlug(slug, fields = []) {
     const realSlug = slug.replace(/\.mdx$/, "")
     const fullPath = join(directory, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, "utf8")
-    const {data, content, excerpt} = matter(fileContents, {excerpt: true})
-    console.log(data, content, excerpt);
+    const {data, content, excerpt} = matter(fileContents, {excerpt: true, sections: true})
+    const entry = matter(fileContents, {excerpt: true, sections: true})
 
     const items = {}
+    console.log(entry);
 
     // Ensure only the minimal needed data is exposed
     fields.forEach((field) => {

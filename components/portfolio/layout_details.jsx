@@ -1,22 +1,21 @@
 export function PortfolioDetails({meta, children}) {
+    console.log(meta, children);
     return (
         <div className="container-md">
             <h1>
-                Lorem ipsum dolor sit amet, consect etur adipiscing elit.
+                {meta.title}
             </h1>
 
             <div>Sep 2022</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at condim entum arcu, sed lobortis purus. Duis purus purus, varius vitae lacinia eu, rhoncus et leo. Nullam a metus eu purus porttitor convallis id in dui. Donec vitae tincidunt ligula, molestie egestas libero. Nam consectetur nisl eu tellus ultricies, sed euismod turpis porttitor.</div>
+            <div>{meta.excerpt}</div>
 
             <div>
                 <div>My Role</div>
-                <div>System Design, Frontend Development</div>
+                <div>{meta.role.join(', ')}</div>
 
                 <div>Technology Stack</div>
                 <div>
-                    <div>Frontend: Nuxt (Vue.js), Babylon.js</div>
-                    <div>Backend: NestJS (Node.js, TypeScript)</div>
-                    <div>Infrastructure: Azure App Service, MongoDB Atlas</div>
+                    {meta.stack.map((group, k) => <TechStackGroup group={group} key={k} />)}
                 </div>
             </div>
 
@@ -27,6 +26,15 @@ export function PortfolioDetails({meta, children}) {
             </div>
 
             <hr />
+        </div>
+    );
+}
+
+function TechStackGroup({group}) {
+    return (
+        <div>
+            <span>{group.type}:</span>
+            {group.skills.join(', ')}
         </div>
     );
 }
