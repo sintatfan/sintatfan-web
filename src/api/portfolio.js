@@ -1,6 +1,7 @@
 import fs from "fs"
 import {join} from "path"
 import matter from "gray-matter"
+import yaml from 'js-yaml';
 
 const directory = join(process.cwd(), "src/content/portfolio")
 
@@ -12,8 +13,14 @@ export function getProjectBySlug(slug, withContent = false) {
     const realSlug = slug.replace(/\.mdx$/, "")
     const fullPath = join(directory, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, "utf8")
-    const md = matter(fileContents, { sections: true });
-    console.log(md.sections);
+    const md = matter(fileContents, {
+        section: function(section, file) {
+            if (typeof section.data === 'string' && section.data.trim() !== '') {
+                section.data = yaml.load(section.data);
+            }
+            section.content = section.content.trim() + '\n';
+        }
+    });
 
     const result = {
         meta: {
@@ -24,7 +31,8 @@ export function getProjectBySlug(slug, withContent = false) {
 
     if (withContent) {
         if (md.sections.length > 0) {
-            result.content = md.sections.find(i => i.key === 'content')?.content;
+            const content = md.sections.find(i => i.key === 'content');
+            result.content = content?.content;
             result.introduction = md.sections.find(i => i.key === 'introduction')?.content;
         } else {
             result.content = md.content;
