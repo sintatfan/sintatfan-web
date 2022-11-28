@@ -8,6 +8,6 @@ export function PillsDecoration({x, y, yOffset, flip = false}) {
 
 export function LightDecoration({x, y, extraClass}) {
     return (
-        <div className={`absolute ${x} ${y} z-[-10] w-[435px] h-[435px] bg-gradient-radial from-primary/20 to-white/0`}></div>
+        <div className={`absolute ${x} ${y} z-[-10] w-[435px] h-[435px] bg-gradient-radial from-primary/20 to-white/0 ${extraClass}`}></div>
     );
 }

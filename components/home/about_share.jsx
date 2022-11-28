@@ -31,7 +31,7 @@ function Gallery({photos}) {
 
 function GalleryPhoto({photo}) {
     return (
-        <div>
+        <div className="drop-shadow-lg">
             <img src={photo.src}
                  srcSet={`${photo.src2X} 2x`}
                  alt={photo.alt}
