@@ -1,40 +1,35 @@
+import {ProjectMeta} from "./meta_card";
+import {ReadMoreSection} from "./related";
+
 export function PortfolioDetails({meta, children}) {
     console.log(meta, children);
     return (
         <div className="container-md">
-            <h1>
+            <h1 className="text-5xl font-bold mb-6 w-7/12">
                 {meta.title}
             </h1>
 
-            <div>Sep 2022</div>
-            <div>{meta.excerpt}</div>
-
-            <div>
-                <div>My Role</div>
-                <div>{meta.role.join(', ')}</div>
-
-                <div>Technology Stack</div>
-                <div>
-                    {meta.stack.map((group, k) => <TechStackGroup group={group} key={k} />)}
+            <div className="flex justify-between mb-16">
+                <div className="w-6/12">
+                    <div className="font-light mb-3">{meta.displayDate}</div>
+                    <div>{meta.excerpt}</div>
+                </div>
+                <div className="flex-none w-5/12">
+                    <ProjectMeta meta={meta} />
                 </div>
             </div>
 
-            <img src="https://placeimg.com/1200/597/tech" alt="" className="rounded-3xl shadow-lg" />
+            <img src={meta.coverImage} alt="" className="rounded-3xl shadow-lg mb-16" />
 
-            <div className="prose mx-auto">
-                {children}
+            <div className="max-w-3xl mx-auto">
+                <div className="prose max-w-none">
+                    {children}
+                </div>
+
+                <hr className="my-12" />
+
+                <ReadMoreSection exclude={meta.slug} />
             </div>
-
-            <hr />
-        </div>
-    );
-}
-
-function TechStackGroup({group}) {
-    return (
-        <div>
-            <span>{group.type}:</span>
-            {group.skills.join(', ')}
         </div>
     );
 }

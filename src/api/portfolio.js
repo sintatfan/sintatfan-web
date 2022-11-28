@@ -8,40 +8,29 @@ export function getProjectsSlugs() {
     return fs.readdirSync(directory)
 }
 
-export function getProjectBySlug(slug, fields = []) {
+export function getProjectBySlug(slug, withContent = false) {
     const realSlug = slug.replace(/\.mdx$/, "")
     const fullPath = join(directory, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, "utf8")
-    const {data, content, excerpt} = matter(fileContents, {excerpt: true, sections: true})
-    const entry = matter(fileContents, {excerpt: true, sections: true})
+    const md = matter(fileContents, {excerpt: true});
 
-    const items = {}
-    console.log(entry);
+    const result = {
+        meta: {
+            slug: realSlug,
+            ...md.data,
+        },
+    };
 
-    // Ensure only the minimal needed data is exposed
-    fields.forEach((field) => {
-        if (field === "slug") {
-            items[field] = realSlug
-        }
-        if (field === "content") {
-            items[field] = content
-        }
-        if (field === "excerpt") {
-            items[field] = excerpt
-        }
+    if (withContent) {
+        result.content = md.content;
+    }
 
-        if (data[field]) {
-            items[field] = data[field]
-        }
-    })
-
-    return items
+    return result;
 }
 
-export function getAllProjects(fields = []) {
+export function getAllProjects() {
     const slugs = getProjectsSlugs()
     return slugs
-        .map((slug) => getProjectBySlug(slug, fields))
-        // sort posts by date in descending order
-        .sort((item1, item2) => (item1.date > item2.date ? "-1" : "1"));
+        .map((slug) => getProjectBySlug(slug, false))
+        .sort((item1, item2) => (item1.publishDate > item2.publishDate ? "-1" : "1"));
 }
