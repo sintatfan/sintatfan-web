@@ -6,9 +6,11 @@ import {mdiArrowLeft as IconArrowLeft} from "@mdi/js";
 import {PillsDecoration} from "../decoration";
 import {MDXRemote} from "next-mdx-remote";
 import {BlockQuote} from "../mdx/BlockQuote";
+import {Image} from "../mdx/Image";
 
 const components = {
-    BlockQuote
+    BlockQuote,
+    Image,
 };
 
 export function PortfolioDetails({meta, content, introduction, related}) {
