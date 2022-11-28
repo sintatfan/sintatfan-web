@@ -5,10 +5,13 @@ import Icon from "@mdi/react";
 import {mdiArrowLeft as IconArrowLeft} from "@mdi/js";
 import {PillsDecoration} from "../decoration";
 import {MDXRemote} from "next-mdx-remote";
+import {BlockQuote} from "../mdx/BlockQuote";
+
+const components = {
+    BlockQuote
+};
 
 export function PortfolioDetails({meta, content, introduction, related}) {
-    const components = {};
-
     return (
         <div className="container-md relative">
             <PillsDecoration x="-left-96" y="-top-80" />
