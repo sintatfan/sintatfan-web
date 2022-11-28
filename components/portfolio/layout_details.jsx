@@ -3,10 +3,14 @@ import {ReadMoreSection} from "./related";
 import Link from "next/link";
 import Icon from "@mdi/react";
 import {mdiArrowLeft as IconArrowLeft} from "@mdi/js";
+import {PillsDecoration} from "../decoration";
 
 export function PortfolioDetails({meta, children, related}) {
     return (
-        <div className="container-md">
+        <div className="container-md relative">
+            <PillsDecoration x="-left-96" y="-top-80" />
+            <PillsDecoration x="-right-96" y="top-24" flip />
+
             <h1 className="text-5xl font-bold mb-6 w-7/12">
                 {meta.title}
             </h1>

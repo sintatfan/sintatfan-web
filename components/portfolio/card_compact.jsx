@@ -1,8 +1,6 @@
 import {useRouter} from "next/router";
 import {Card} from "../card";
 import Link from "next/link";
-import Icon from "@mdi/react";
-import {mdiChevronRight as IconArrowRight} from "@mdi/js";
 
 export default function CompactProjectCard({ project }) {
     const router = useRouter();
