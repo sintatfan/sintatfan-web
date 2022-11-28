@@ -1,8 +1,10 @@
 import {ProjectMeta} from "./meta_card";
 import {ReadMoreSection} from "./related";
+import Link from "next/link";
+import Icon from "@mdi/react";
+import {mdiArrowLeft as IconArrowLeft} from "@mdi/js";
 
-export function PortfolioDetails({meta, children}) {
-    console.log(meta, children);
+export function PortfolioDetails({meta, children, related}) {
     return (
         <div className="container-md">
             <h1 className="text-5xl font-bold mb-6 w-7/12">
@@ -28,7 +30,12 @@ export function PortfolioDetails({meta, children}) {
 
                 <hr className="my-12" />
 
-                <ReadMoreSection exclude={meta.slug} />
+                {related.length > 0 ? <ReadMoreSection related={related} /> : null}
+
+                <Link href={"/"} className="space-x-2 inline-flex items-center transition-colors duration-300 hover:text-primary">
+                    <Icon path={IconArrowLeft} size={0.9} className="inline-block" />
+                    <span className="text-lg font-light">Back to List of Projects</span>
+                </Link>
             </div>
         </div>
     );
