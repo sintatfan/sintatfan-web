@@ -18,20 +18,20 @@ const components = {
 
 export function PortfolioDetails({meta, content, introduction, related}) {
     return (
-        <div className="container-md relative">
+        <div className="container-md px-4 relative">
             <PillsDecoration x="-left-96" y="-top-80" />
             <PillsDecoration x="-right-96" y="top-24" flip />
 
-            <h1 className="text-5xl font-bold mb-6 w-7/12">
+            <h1 className="text-3xl sm:text-5xl font-bold mb-2 sm:mb-6 lg:w-7/12">
                 {meta.title}
             </h1>
 
-            <div className="flex justify-between mb-16">
-                <div className="w-6/12">
+            <div className="mb-12 lg:mb-16 lg:flex lg:justify-between">
+                <div className="lg:w-6/12 mb-8">
                     <div className="font-light mb-3">{meta.displayDate}</div>
                     <MDXRemote {...introduction} components={components} />
                 </div>
-                <div className="flex-none w-5/12">
+                <div className="flex-none lg:w-5/12">
                     <ProjectMeta meta={meta} />
                 </div>
             </div>

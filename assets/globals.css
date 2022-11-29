@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    @apply overflow-x-hidden;
+}
 body {
-    @apply bg-body font-sans text-content overflow-x-hidden antialiased;
+    @apply bg-body font-sans text-content antialiased overflow-x-hidden;
     padding-top: theme('header.expandedHeight');
 }
 
