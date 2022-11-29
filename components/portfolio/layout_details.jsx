@@ -7,10 +7,13 @@ import {PillsDecoration} from "../decoration";
 import {MDXRemote} from "next-mdx-remote";
 import {BlockQuote} from "../mdx/BlockQuote";
 import {Image} from "../mdx/Image";
+import {Stats, StatItem} from "../mdx/Stats";
 
 const components = {
     BlockQuote,
     Image,
+    Stats,
+    StatItem,
 };
 
 export function PortfolioDetails({meta, content, introduction, related}) {

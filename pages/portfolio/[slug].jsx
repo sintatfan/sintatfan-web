@@ -1,7 +1,5 @@
-import {MDXRemote} from "next-mdx-remote";
 import {serialize} from 'next-mdx-remote/serialize'
 import {getAllProjects, getProjectBySlug, getProjectsSlugs} from "../../src/api/portfolio";
-import matter from "gray-matter";
 import {PortfolioDetails} from "../../components/portfolio/layout_details";
 
 const Page = function ({meta, contentSource, introductionSource, related}) {
