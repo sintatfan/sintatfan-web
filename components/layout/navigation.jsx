@@ -4,7 +4,11 @@ import {useState} from "react";
 
 function NavItem({id, label}) {
     return (
-        <li><a href={`#${id}`} className="block px-4 py-3 sm:p-0">{label}</a></li>
+        <li>
+            <a href={`#${id}`} className="block px-4 py-3 sm:p-0 text-xl sm:text-md">
+                {label}
+            </a>
+        </li>
     );
 }
 
@@ -18,11 +22,14 @@ function SocialLink({title, url, icon}) {
     );
 }
 
-function MainMenuWrapper({value, children}) {
+function MainMenuWrapper({value, children, onClose}) {
     return (
-        <div className={`${value ? 'block' : 'opacity-0 invisible scale-0'} transition-all origin-top-right absolute z-10 -mt-3 top-full right-3 w-64 bg-body/90 rounded-xl shadow-xl backdrop-blur sm:w-auto sm:block sm:visible sm:static sm:mt-0 sm:bg-transparent sm:rounded-xl sm:shadow-none sm:backdrop-blur-none sm:opacity-100 sm:transform-none`}>
-            {children}
-        </div>
+        <>
+            <div className={`${value ? 'block' : 'opacity-0 invisible scale-0'} transition-all duration-300 origin-top-right absolute z-10 -mt-3 top-full right-3 w-64 bg-body/90 rounded-xl shadow-xl backdrop-blur sm:w-auto sm:block sm:visible sm:static sm:mt-0 sm:bg-transparent sm:rounded-xl sm:shadow-none sm:backdrop-blur-none sm:opacity-100 sm:transform-none`}>
+                {children}
+            </div>
+            <div className={`${value ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-300 fixed top-0 left-0 w-screen h-screen bg-body/80 z-[-1] sm:hidden`} onClick={onClose}></div>
+        </>
     );
 }
 
@@ -61,7 +68,7 @@ export default function Navigation() {
     return (
         <>
             <MenuToggleBtn value={isOpened} onChange={setOpen} />
-            <MainMenuWrapper value={isOpened}>
+            <MainMenuWrapper value={isOpened} onClose={() => setOpen(false)}>
                 <MainMenu />
             </MainMenuWrapper>
         </>
