@@ -40,7 +40,10 @@ export function LandingGraphic() {
                     <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#999999" flood-opacity="0.12" />
                 </filter>
 
-                <image href="/images/landing_ide.svg" x={45} y={0} width={712} height={512} filter="url(#shadow)"></image>
+                <g transform="translate(45 0)">
+                    <ellipse cx={356} cy={510} rx={356} ry={40} fill="url(#shadow-gradient)" opacity={0.8}/>
+                    <image href="/images/landing_ide.svg" x={0} y={0} width={712} height={512} filter="url(#shadow)"></image>
+                </g>
 
                 {/* Line */}
                 <g transform="translate(320 380)">
