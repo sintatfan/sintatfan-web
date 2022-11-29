@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps }) {
                 <link rel="manifest" href="/favicon/site.webmanifest" />
                 <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#f29516" />
                 <meta name="msapplication-TileColor" content="#ffffff" />
-                <meta name="theme-color" content="#F29516" />
+                <meta name="theme-color" content="#F7F7F7" />
             </Head>
 
             <PageHeader />
