@@ -4,7 +4,7 @@ import {LightDecoration, PillsDecoration} from "../decoration";
 
 export default function WorkSection({ projects }) {
     return (
-        <div className="container-md relative pt-36 mb-80">
+        <div className="container-md px-4 relative pt-36 mb-40 lg:mb-80">
             <PillsDecoration x="-right-1/4" y="top-0" flip />
             <LightDecoration x="-left-80" y="-top-16" />
 

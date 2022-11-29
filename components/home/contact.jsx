@@ -6,15 +6,15 @@ import {LightDecoration, PillsDecoration} from "../decoration";
 
 export default function ContactSection() {
     return (
-        <div className="container-md flex relative mb-64">
+        <div className="container-md px-4 lg:flex relative mb-32 lg:mb-64">
             <PillsDecoration x="-left-1/3" y="-top-32"/>
 
-            <div className="w-2/6 flex-none">
+            <div className="mb-4 lg:w-2/6 flex-none">
                 <SectionTitle>Contact</SectionTitle>
             </div>
             <div className="flex-auto relative">
                 <Card>
-                    <div className="p-10 space-y-4">
+                    <div className="p-8 sm:p-10 space-y-4">
                         <div className="prose">
                             <p>I am passionate in designing scalable systems, enlivening design into vivid digital
                                 products, and optimizing system performance.</p>

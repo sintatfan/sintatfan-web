@@ -23,7 +23,7 @@ export default function SubsectionShare() {
 
 function Gallery({photos}) {
     return (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {photos.map((p, i) => <GalleryPhoto photo={p} key={i} />)}
         </div>
     );
@@ -31,11 +31,11 @@ function Gallery({photos}) {
 
 function GalleryPhoto({photo}) {
     return (
-        <div className="drop-shadow-lg">
+        <div className="shadow-lg rounded-xl overflow-hidden">
             <img src={photo.src}
                  srcSet={`${photo.src2X} 2x`}
                  alt={photo.alt}
-                 className="rounded-xl"
+                 className="w-full"
             />
         </div>
     );

@@ -10,14 +10,14 @@ export default function HorizontalProjectCard({project}) {
 
     return (
         <Card onClick={() => router.push(url)}>
-            <div className="flex items-center space-x-4">
-                <div className="flex-none w-[488px] min-h-[370px] relative">
+            <div className="md:flex items-center md:space-x-4">
+                <div className="flex-none self-stretch aspect-[488/370] md:aspect-auto md:w-1/3 xl:w-[488px] xl:min-h-[370px] relative">
                     <img src={project.coverImage} alt=""
                          className="absolute inset-0 w-full h-full object-cover" />
                 </div>
 
-                <div className="flex-auto p-8">
-                    <h4 className="font-bold text-3xl mb-2">{project.title}</h4>
+                <div className="flex-auto p-6 sm:p-8">
+                    <h4 className="font-bold text-xl sm:text-3xl mb-2">{project.title}</h4>
                     <p>{project.excerpt}</p>
 
                     <div className="text-right mt-5">
