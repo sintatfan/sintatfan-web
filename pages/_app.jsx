@@ -6,6 +6,7 @@ import PageFooter from "../components/layout/footer";
 
 // Initialize `Inter` font
 const inter = Inter({
+    display: 'swap',
     subsets: ['latin'],
     variable: '--font-inter',
 })
