@@ -40,13 +40,16 @@ body {
     }
 
     .btn-outline {
-        @apply border border-primary-light text-primary;
+        @apply border border-primary-light text-primary hover:bg-primary-light/10;
     }
     .btn-link {
         @apply text-primary hover:bg-primary-light/10;
     }
     .btn-sm {
         @apply text-sm px-4 py-1.5;
+    }
+    .btn-md {
+        @apply px-8 py-2;
     }
 }
 
