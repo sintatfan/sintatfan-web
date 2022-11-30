@@ -16,7 +16,7 @@ export function SubsectionDo() {
                 </AboutSubsection>
 
                 <AboutSubsection heading="I optimize." iconSrc="/images/about_optimize.svg" lightPos="left">
-                    <p>doesn&apos;t stop. [system performance, UX]</p>
+                    <p>I&apos;m keen to achieve excellence in my deliverables. I diagnose and optimize system performance to reduce loading time and data transfer costs. I also worked with other disciplines to optimize user experience and build intuitive products.</p>
                 </AboutSubsection>
             </div>
         </>
