@@ -1,24 +1,48 @@
 ---
-title: 'Another Blog Post 2'
+title: 'Creating an ML-powered Photo Booth to Engage with Customers in Christmas'
 publishDate: '2020-12-01T00:00:00Z'
 displayDate: 'Dec 2020'
 role: ['System Design', 'Frontend Development']
 stack:
 - type: 'Frontend'
-  skills: ['Nuxt', 'Vue.js', 'MediaPipe']
+  skills: ['Nuxt', 'Vue.js', 'TensorFlow Lite']
 - type: 'Backend'
   skills: ['Node.js']
 - type: 'Infrastructure'
   skills: ['Firebase']
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at condim entum arcu, sed lobortis purus. Duis purus purus, varius vitae lacinia eu, rhoncus et leo. Nullam a metus eu purus porttitor convallis id in dui. Donec vitae tincidunt ligula, molestie egestas libero. Nam consectetur nisl eu tellus ultricies, sed euismod turpis porttitor.'
-coverImage: 'https://placeimg.com/1200/630/tech'
+excerpt: "I developed a web-based photo booth for a shopping mall's Christmas campaign in 2020. The site was powered by a machine learning solution to execute a real-time background removal process on mobile devices."
+bannerImage: '/images/projects/harbourcity_xmas.jpg'
+coverImage: '/images/projects/harbourcity_xmas_cover.jpg'
 ---
 
 ---introduction
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Invited by a flagship shopping mall in Hong Kong, I developed an online photo booth as a part of the mall's Xmas promotion campaign. The project enabled the client to reach over thousands of customers and retain the customer relationship during the pandemic.
+
+Users can choose a site photo among 12 photo hotspots of the mall as the background and paste a portrait photo of themselves. After that, they can share the synthesised photo to their relatives and friends to spread the seasonal joyfulness.
 
 ---content
 ---
-# Hello World
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a diam scelerisque, sollicitudin mauris sit amet, vestibulum ipsum. Vivamus quis diam quis leo finibus dapibus. Pellentesque eu ipsum vitae sem hendrerit aliquam non vitae ante. Suspendisse leo purus, gravida a maximus id, bibendum vitae diam. Aliquam tempor, nibh vitae molestie mollis, neque neque elementum metus, eget porta libero velit sit amet orci. Fusce posuere sed dui ut condimentum. Nunc sed odio quis orci ullamcorper luctus. Vivamus sagittis eget enim consectetur luctus. Integer ut dolor sed magna blandit dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi rhoncus sagittis urna, vel aliquet erat vestibulum sed. Proin nec fermentum purus, interdum bibendum arcu.
+# Challenges
+The feeling of Christmas atmosphere is the core goal of the project. Our team hoped the platform could reach as many people as possible. Therefore, making it compatible with various devices was the biggest challenge. Traditionally, real-time background removal requires a green screen background or a depth camera. These methods are not a well-fitted for home-use application, especially a web-based platform.
+
+Another challenge was the short development time under the pandemic. I had less than a month to complete the system design and development.
+
+# Solution
+<Image src="/images/projects/harbourcity_xmas_flow.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Flow of the Photo Booth" />
+
+I developed this web-based photo booth platform with Vue.js and Canvas. Users could choose a background and upload their own photos. Then, the platform would automatically separate the persons from photos.
+
+Thanks to the power of Machine Learning, I adopted TensorFlow Lite to execute [body segmentation](https://blog.tensorflow.org/2022/01/body-segmentation.html) on a web-based platform. This method requires no extra equipment, which makes the whole process simple and intuitive. In addition, the result is fast and accurate.
+
+<Image src="/images/projects/harbourcity_xmas_segment.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Process of Person Segmentation" />
+
+I made use of a few simple Firebase Functions to handle actions like photo upload and sharing, and used Firebase Storage to store the greeting cards created by users. This serverless approach enabled me to develop and deploy the project rapidly in a low cost.
+
+# Result
+The project achieved a great success to engage with its target customers and was reported by the local media and press. The platform was developed to get compatible with mainstream mobile devices, and optimized the page structure to achieve a fast loading speed.
+
+<Stats>
+    <StatItem label="Digital greeting cards created">700+</StatItem>
+    <StatItem label="Google Speed Index">1.6s <span className="text-lg">(Fast)</span></StatItem>
+</Stats>

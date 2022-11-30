@@ -22,21 +22,24 @@ export function PortfolioDetails({meta, content, introduction, related}) {
             <PillsDecoration x="-left-96" y="-top-80" />
             <PillsDecoration x="-right-96" y="top-24" flip />
 
-            <h1 className="text-3xl sm:text-5xl font-bold mb-2 sm:mb-6 lg:w-7/12">
+            <h1 className="text-3xl sm:text-5xl sm:leading-[1.2] font-bold mb-2 sm:mb-6 lg:w-7/12">
                 {meta.title}
             </h1>
 
             <div className="mb-12 lg:mb-16 lg:flex lg:justify-between">
-                <div className="lg:w-6/12 mb-8">
+                <div className="mb-8 lg:mb-0 lg:w-6/12">
                     <div className="font-light mb-3">{meta.displayDate}</div>
-                    <MDXRemote {...introduction} components={components} />
+
+                    <div className="prose max-w-none">
+                        <MDXRemote {...introduction} components={components} />
+                    </div>
                 </div>
                 <div className="flex-none lg:w-5/12">
                     <ProjectMeta meta={meta} />
                 </div>
             </div>
 
-            <img src={meta.coverImage} alt="" className="rounded-3xl shadow-lg mb-16" />
+            <img src={meta.bannerImage || meta.coverImage} alt="" className="rounded-3xl shadow-lg mb-16" />
 
             <div className="max-w-3xl mx-auto">
                 <div className="prose max-w-none">
