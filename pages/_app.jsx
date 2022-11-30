@@ -13,7 +13,7 @@ const inter = Inter({
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <div className={`${inter.variable} font-sans`}>
+        <div className={`${inter.variable} font-sans selection:bg-primary-light/60`}>
             <Head>
                 <title>Sin-Tat&apos;s Personal Website | Full Stack Developer</title>
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
