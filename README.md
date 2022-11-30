@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sin-Tat's Personal Website
+This is the repository of my personal website, which introduced my background, vision and some selected projects.  
+
+**[Visit my website](https://sintat.fan)**
+
+## Technology Stack
+I designed the UI with [Figma](https://figma.com) and built this website with this technology stack:
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+
+Since it is a simple personal website with no backend needed, this project adopted the *Static Site Generation (SSG)* approach. 
+With no remote CMS, the portfolio pages were written in MDX format and parsed by [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) and [gray-matter](https://github.com/jonschlinkert/gray-matter).
+
+> *Guess what?* This is my first time to use Tailwind CSS to build web frontend. It's really an amazing framework to build a responsive frontend with a highly-customized design system.
 
 ## Getting Started
+If you are interested in this project, feel free to clone it and then run `yarn install` to install all required dependencies.
 
-First, run the development server:
-
+To run the development server:
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
+This project was developed with SSG approach.
+Thanks to Next.js's [Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export) feature, building a well-structured static HTML site has been super easy.
+You can run this command to generate a static HTML site:
+```bash
+next build && next export
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The built site will be exported to the `out` directory. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It has been my choice to deploy the website to Cloudflare pages. But it should support other static site hosting, such as Vercel, AWS Amplify, Google Firebase Hosting and Azure Static Site.
