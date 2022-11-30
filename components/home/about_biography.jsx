@@ -19,8 +19,8 @@ export function Biography() {
             <div className="flex-auto max-w-3xl">
                 <p className="text-3xl sm:text-4xl lg:text-5xl mb-3">Computer Science is <br />an <span className="text-gradient font-bold">art of problem solving</span>.</p>
                 <div className="text-lg">
-                    <p className="mb-3">I am a passionate and competent Software Developer with over 9 years of experience in web development. I enjoy crafting engaging frontend and developing robust applications.</p>
-                    <p>With my background in Computer Science and Interaction Design, as well as my solid work experience, I am eager to help companies build elegant, cost-effective and scalable digital solutions that solve problems, engage with people and boost productivity.</p>
+                    <p className="mb-3">I&apos;m a passionate and competent Software Developer with over 9 years of experience in web development. I enjoy crafting engaging frontend and developing robust applications.</p>
+                    <p>With my background in Computer Science and Interaction Design, as well as my solid work experience, I&apos;m eager to help companies build elegant digital solutions that solve problems, engage with people and boost productivity.</p>
                 </div>
             </div>
         </div>

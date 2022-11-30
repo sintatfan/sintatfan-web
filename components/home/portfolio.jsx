@@ -10,8 +10,8 @@ export default function WorkSection({ projects }) {
 
             <SectionTitle>Work</SectionTitle>
             <p className="mb-8 text-lg">
-                It is always rewarding to help corporations build digital solutions. <br />
-                Check out some of my recent projects and see how I faced these challenges!
+                It&apos;s always rewarding to help corporations build digital solutions. <br />
+                Check out some of my recent projects and see how I faced these challenges.
             </p>
 
             <WorkList projects={projects} />
