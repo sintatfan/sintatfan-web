@@ -16,7 +16,7 @@ export default function PageHeader() {
     useEvent('scroll', onPageScroll);
 
     return (
-        <header className={`${styles.header} fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isGlassy ? `${styles.headerGlassy} bg-body/80 backdrop-blur-xl` : ''}`}>
+        <header className={`${styles.header} fixed top-0 left-0 right-0 z-50 transition-height duration-300 ${isGlassy ? `${styles.headerGlassy} bg-body/80 backdrop-blur-xl` : ''}`}>
             <div className="container px-4 h-full flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/#top">
