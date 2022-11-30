@@ -1,11 +1,18 @@
 import {serialize} from 'next-mdx-remote/serialize'
 import {getAllProjects, getProjectBySlug, getProjectsSlugs} from "../../src/api/portfolio";
 import {PortfolioDetails} from "../../components/portfolio/layout_details";
+import Head from "next/head";
 
-const Page = function ({meta, contentSource, introductionSource, related}) {
+const PortfolioDetailsPage = function ({meta, contentSource, introductionSource, related}) {
     return (
-        <PortfolioDetails meta={meta} related={related}
-                          introduction={introductionSource} content={contentSource} />
+        <>
+            <Head>
+                <meta property="og:image" content={meta.coverImage || '/images/ogimg.png'} />
+                <meta property="og:description" content={meta.excerpt} />
+            </Head>
+            <PortfolioDetails meta={meta} related={related}
+                              introduction={introductionSource} content={contentSource} />
+        </>
     );
 };
 
@@ -36,4 +43,4 @@ export const getStaticPaths = async () => {
     }
 }
 
-export default Page;
+export default PortfolioDetailsPage;
