@@ -57,7 +57,8 @@ function MainMenu() {
 
 function MenuToggleBtn({value, onChange}) {
     return (
-        <button type="button" onClick={() => onChange(!value)} className="sm:hidden">
+        <button type="button" onClick={() => onChange(!value)} className="sm:hidden"
+                aria-label={value ? 'Close navigation menu' : 'Open navigation menu'}>
             <Icon path={value ? IconClose : IconMenu} size={1.5} />
         </button>
     );
