@@ -1,6 +1,7 @@
 import '../assets/globals.css'
 import { Inter } from "@next/font/google";
 import Head from "next/head";
+import Script from "next/script";
 import PageHeader from "../components/layout/header";
 import PageFooter from "../components/layout/footer";
 
@@ -30,6 +31,21 @@ export default function MyApp({ Component, pageProps }) {
             <PageHeader />
             <Component {...pageProps} />
             <PageFooter />
+
+            {/* Google tag (gtag.js) */}
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-XY6NJ3SE98"
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('js', new Date());
+        
+                  gtag('config', 'G-XY6NJ3SE98');
+                `}
+            </Script>
         </div>
     )
 }
