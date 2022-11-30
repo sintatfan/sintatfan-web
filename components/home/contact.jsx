@@ -6,7 +6,7 @@ import {LightDecoration, PillsDecoration} from "../decoration";
 
 export default function ContactSection() {
     return (
-        <div className="container-md px-4 lg:flex relative mb-32 lg:mb-64">
+        <div className="container-md px-4 lg:flex relative mb-32 lg:mb-64" id="contact">
             <PillsDecoration x="-left-1/3" y="-top-32"/>
 
             <div className="mb-4 lg:w-2/6 flex-none">

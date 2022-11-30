@@ -1,13 +1,14 @@
 import Icon from "@mdi/react";
 import {mdiGithub as IconGitHub, mdiLinkedin as IconLinkedIn, mdiMenu as IconMenu, mdiClose as IconClose} from '@mdi/js';
 import {useState} from "react";
+import Link from "next/link";
 
 function NavItem({id, label}) {
     return (
         <li>
-            <a href={`#${id}`} className="block px-4 py-3 sm:p-0 text-xl sm:text-md">
+            <Link href={`/#${id}`} className="block px-4 py-3 sm:p-0 text-xl sm:text-md">
                 {label}
-            </a>
+            </Link>
         </li>
     );
 }

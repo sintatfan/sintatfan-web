@@ -6,7 +6,7 @@ import {Biography} from "./about_biography";
 
 export default function AboutSection() {
     return (
-        <div className="container-md px-4 relative pt-48">
+        <div className="container-md px-4 relative pt-48" id="about">
             <LightDecoration x="-left-80" y="-top-16" />
 
             <SectionTitle>About</SectionTitle>
