@@ -23,24 +23,28 @@ Users can choose a site photo among 12 photo hotspots of the mall as the backgro
 
 ---content
 ---
-# Challenges
-The feeling of Christmas atmosphere is the core goal of the project. Our team hoped the platform could reach as many people as possible. Therefore, making it compatible with various devices was the biggest challenge. Traditionally, real-time background removal requires a green screen background or a depth camera. These methods are not a well-fitted for home-use application, especially a web-based platform.
+# Background
+While Christmas is a peak season for retailers, it is a headache that people preferred to stay home during the pandemic. A shopping mall would like to get connected to its customers in 2020 Christmas during the pandemic. My colleagues from Design Team came up with an idea of online photo booth after discussions with the client.
+
+Our team hoped the platform could reach as many people as possible. Therefore, making it compatible with various devices was the biggest challenge. Traditionally, real-time background removal requires a green screen background or a depth camera. These methods are not a well-fitted for home-use application, especially a web-based platform.
 
 Another challenge was the short development time under the pandemic. I had less than a month to complete the system design and development.
 
 # Solution
 <Image src="/images/projects/harbourcity_xmas_flow.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Flow of the Photo Booth" />
 
-I developed this web-based photo booth platform with Vue.js and Canvas. Users could choose a background and upload their own photos. Then, the platform would automatically separate the persons from photos.
+The platform was simple to use. Users could choose a background and upload their own photos. Then, the platform would automatically separate the persons from photos.
 
-Thanks to the power of Machine Learning, I adopted TensorFlow Lite to execute [body segmentation](https://blog.tensorflow.org/2022/01/body-segmentation.html) on a web-based platform. This method requires no extra equipment, which makes the whole process simple and intuitive. In addition, the result is fast and accurate.
+How did I implement this solution? I developed the frontend of this web-based photo booth platform with Vue.js. Thanks to the power of Machine Learning, I adopted TensorFlow Lite to execute [body segmentation](https://blog.tensorflow.org/2022/01/body-segmentation.html) on a web-based platform. This method requires no extra equipment, which makes the whole process simple and intuitive. In addition, the result is fast and accurate.
+
+Plus, the greeting card was rendered in a `canvas` element. Users could slightly adjust the background removal result on their mobile devices intuitively.
 
 <Image src="/images/projects/harbourcity_xmas_segment.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Process of Person Segmentation" />
 
-I made use of a few simple Firebase Functions to handle actions like photo upload and sharing, and used Firebase Storage to store the greeting cards created by users. This serverless approach enabled me to develop and deploy the project rapidly in a low cost.
+For the backend service, the platform was powered by Firebase. I developed a few simple Firebase Functions to handle actions like photo upload and sharing, and used Firebase Storage to store the greeting cards created by users. This serverless approach enabled me to develop and deploy the project rapidly in a low cost.
 
 # Result
-The project achieved a great success to engage with its target customers and was reported by the local media and press. The platform was developed to get compatible with mainstream mobile devices, and optimized the page structure to achieve a fast loading speed.
+The project achieved a great success to engage with its target customers and was reported by the local media and press. The platform was developed to get compatible with mainstream mobile devices, and optimized the page structure to achieve a fast loading speed. In overall, the client was satisified with the product.
 
 <Stats>
     <StatItem label="Digital greeting cards created">700+</StatItem>
