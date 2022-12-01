@@ -50,7 +50,7 @@ export function PortfolioDetails({meta, content, introduction, related}) {
 
                 {related.length > 0 ? <ReadMoreSection related={related} /> : null}
 
-                <Link href={"/"} className="space-x-2 inline-flex items-center transition-colors duration-300 hover:text-primary">
+                <Link href={"/#work"} className="space-x-2 inline-flex items-center transition-colors duration-300 hover:text-primary">
                     <Icon path={IconArrowLeft} size={0.9} className="inline-block" />
                     <span className="text-lg font-light">Back to List of Projects</span>
                 </Link>
