@@ -1,0 +1,53 @@
+---
+title: 'Modernizing Logistics Systems to Grow Businesses and Save Costs'
+publishDate: '2021-12-01T00:00:00Z'
+displayDate: 'Dec 2021'
+role: ['System Design', 'Frontend Development', 'Backend Development']
+stack:
+- type: 'Frontend'
+  skills: ['React', 'Mantine']
+- type: 'Backend'
+  skills: ['Node.js', 'TypeScript', 'NestJS']
+- type: 'Infrastructure'
+  skills: ['AWS Lambda', 'AWS API Gateway', 'AWS EventBridge', 'AWS SQS']
+excerpt: "I ... "
+bannerImage: '/images/projects/kehk.jpg'
+coverImage: '/images/projects/kehk_cover.jpg'
+---
+
+---introduction
+---
+I developed an online photo booth as a part of a shopping mall's Xmas promotion campaign. The project enabled the client to reach over thousands of customers and retain the customer relationship during the pandemic.
+
+Users can choose a site photo among 12 photo hotspots of the mall as the background and paste a portrait photo of themselves. After that, they can share the synthesised photo to their relatives and friends to spread the seasonal joyfulness.
+
+---content
+---
+# Background
+While Christmas is a peak season for retailers, it is a headache that people preferred to stay home during the pandemic. HarbourCity, a flagship shopping mall in Hong Kong, would like to get connected to its customers in 2020 Christmas during the pandemic. My colleagues from Design Team came up with an idea of online photo booth after discussions with the client.
+
+# Challenges
+Our team hoped the platform could reach as many people as possible. Therefore, making it compatible with various devices was the biggest challenge. Traditionally, real-time background removal requires a green screen background or a depth camera. These methods are not a well-fitted for home-use application, especially a web-based platform.
+
+Another challenge was the short development time under the pandemic. I had less than a month to complete the system design and development.
+
+# Solution
+<Image src="/images/projects/harbourcity_xmas_flow.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Flow of the Photo Booth" />
+
+The platform was simple to use. Users could choose a background and upload their own photos. Then, the platform would automatically separate the persons from photos.
+
+How did I implement this solution? I developed the frontend of this web-based photo booth platform with Vue.js. Thanks to the power of Machine Learning, I adopted TensorFlow Lite to execute [body segmentation](https://blog.tensorflow.org/2022/01/body-segmentation.html) on a web-based platform. This method requires no extra equipment, which makes the whole process simple and intuitive. In addition, the result is fast and accurate.
+
+Plus, the greeting card was rendered in a `canvas` element. Users could slightly adjust the background removal result on their mobile devices intuitively.
+
+<Image src="/images/projects/harbourcity_xmas_segment.jpg" alt="The web app segmented persons from uploaded photos to remove photo background" caption="Process of Person Segmentation" />
+
+For the backend service, the platform was powered by Firebase. I developed a few simple Firebase Functions to handle actions like photo upload and sharing, and used Firebase Storage to store the greeting cards created by users. This serverless approach enabled me to develop and deploy the project rapidly in a low cost.
+
+# Result
+The project achieved a great success to engage with its target customers and was reported by the local media and press. The platform was developed to get compatible with mainstream mobile devices, and optimized the page structure to achieve a fast loading speed. In overall, the client was satisified with the product.
+
+<Stats>
+    <StatItem label="Digital greeting cards created">700+</StatItem>
+    <StatItem label="Google Speed Index">1.6s <span className="text-lg">(Fast)</span></StatItem>
+</Stats>
