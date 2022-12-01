@@ -9,7 +9,7 @@ export function BlockQuote({by, children}) {
                 <div className="not-prose p-6 sm:p-12 flex space-x-2 sm:space-x-4">
                     <span className="text-3xl sm:text-5xl font-bold relative -top-2">“</span>
                     <div className="flex-auto">
-                        <div className="mb-2 sm:text-2xl leading-normal">{children}</div>
+                        <div className="mb-2 sm:text-2xl leading-normal sm:leading-normal">{children}</div>
                         <div className="text-sm sm:text-md italic font-light">— {by}</div>
                     </div>
                     <span className="text-3xl sm:text-5xl font-bold self-end relative -bottom-4">”</span>
