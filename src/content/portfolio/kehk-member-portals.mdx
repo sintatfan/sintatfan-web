@@ -27,32 +27,32 @@ With a cloud-native architecture comprised of several serverless components, the
 
 ---content
 ---
-# Background
+## Background
 Kerry Express (KEHK) is a delivery company, which was famous for its B2B courier service. The company planned to expand its market share in the B2C service and cross-border delivery service in 2021. As a part of its service expansion, the company decided to launch mobile apps for managing local delivery shipments and earn loyalty points. The system should also integrate with various payment gateways for multi-tenants.
 
-# Challenges
+## Challenges
 The company had various systems used by different businesses. When I designed the system, it should support multiple data sources and could be accessed by multi-tenants. These features led to challenges:
 
-1. **Store data effectively:**
-2. **Connect to various providers:**
-3. **Maintain shared modules among businesses:**
+1. Store and access data efficiently: The system should be able to store and access a huge amount of frequently-changed orders. It should also be scalable to handle even more orders in the future, especially during the peak season.
+2. Connect to various providers: The platform connects to many other external systems, such as order management system and payment gateway. The system design should consider the nature of those systems, such as rate limits and API schema, to pull and push data effectively.
+3. Maintain shared modules among businesses: The membership and payment modules of the system are shared among the company's different services. The system should be able to support concurrent connections from users across those few services.
 
-# Solution
+## Solution
+I adopted a cloud-native architecture in the system design of the project. The whole system comprises a few microservices, such as serverless functions, queues and an event bus, to process data and handle different kinds of workload.
 
-Supervised a development team of five and increased 10% efficiency by creating API documents with OpenAPI and conducting code reviews.
-Transformed a monolith e-commerce system to a microservice and cloud-native architecture that handles over 1,000 concurrent requests with 70% infrastructure cost reduction.
-Built static-site applications with Nuxt and serverless RESTful APIs with Node.js and MongoDB to increase loading speed by 4x.
+The core of the system is a few Node.js applications running on AWS Lambda connected from Amazon API Gateway. With the event bus and queues components, the payment module supports concurrent requests and processed 100K transactions in the first year.
 
-Transformed a monolith e-commerce system to a static-site application with Nuxt (Vue.js) to handle over 1,000 concurrent requests with 70% infrastructure cost reduction.
-Optimized the frontend to increase loading speed by 4x and reduced 50% of data transfer cost.
-Supervised a development team of five and created API documents with OpenAPI to increase 10% efficiency of frontend integration.
+As the format of orders varies from providers, I proposed to use a document-oriented database MongoDB, instead of a traditional relational database, to store the order data, which is high-performance, flexible but still easy to manage. Under an agile development cycle, this approach allowed my teammate and me to update the system effortlessly subject to the change of business requirements.
 
+For the frontend, it was built in a Static Site Generation (SSG) approach with Nuxt, which delivers the websites in a fast and low-cost way. I also kept on optimizing the frontend to further improve the page speed and reduce the cost of data transfer.
 
-# Result
-By applying the modern web technology stack and microservice architecture, I helped the company ... . With the measurable success of the system, ... . In the future, the company also planned to make use of IoT devices and build an internal dashboard to improve the reliability of its delivery service.
+## Result
+By applying the modern web technology stack and microservice architecture, I helped the company to build the whole ecosystem of order tracking, membership and payment to handle transactions of over US$1M with up to 70% infrastructure costs reduced.
+
+With the measurable success of the system, the company also planned to make use of IoT devices and build an internal dashboard to improve the reliability of its delivery service in the future.
 
 <Stats>
-    <StatItem label="Infrastructure cost reduction">70%</StatItem>
+    <StatItem label="Infrastructure costs reduction">70%</StatItem>
     <StatItem label="Loading speed increased">4x</StatItem>
     <StatItem label="Payment transactions processed">100K+</StatItem>
     <StatItem label="Delivery orders handled in 6 months">1.2M+</StatItem>
