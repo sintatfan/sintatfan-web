@@ -30,12 +30,17 @@ With a cloud-native architecture comprised of several serverless components, the
 ## Background
 Kerry Express (KEHK) is a delivery company, which was famous for its B2B courier service. The company planned to expand its market share in the B2C service and cross-border delivery service in 2021. As a part of its service expansion, the company decided to launch mobile apps for managing local delivery shipments and earn loyalty points. The system should also integrate with various payment gateways for multi-tenants.
 
+## Tasks
+- **Backend:** Design and develop a backend system to consolidate order data from various upstream systems, process customer loyalty points and accept payments through six third-party payment service providers.
+- **Customer Portal:** Build various web portals and a hybrid mobile app for customers to trace shipment orders, make orders and check their loyalty points.
+- **Staff Portal:** Build a web-based staff portal for staff members to check transactions and generate reports.
+
 ## Challenges
 The company had various systems used by different businesses. When I designed the system, it should support multiple data sources and could be accessed by multi-tenants. These features led to challenges:
 
-1. Store and access data efficiently: The system should be able to store and access a huge amount of frequently-changed orders. It should also be scalable to handle even more orders in the future, especially during the peak season.
-2. Connect to various providers: The platform connects to many other external systems, such as order management system and payment gateway. The system design should consider the nature of those systems, such as rate limits and API schema, to pull and push data effectively.
-3. Maintain shared modules among businesses: The membership and payment modules of the system are shared among the company's different services. The system should be able to support concurrent connections from users across those few services.
+1. **Store and access data efficiently:** The system should be able to store and access a huge amount of frequently-changed orders. It should also be scalable to handle even more orders in the future, especially during the peak season.
+2. **Connect to various providers:** The platform connects to many other external systems, such as order management system and payment gateway. The system design should consider the nature of those systems, such as rate limits and API schema, to pull and push data effectively.
+3. **Maintain shared modules among businesses:** The membership and payment modules of the system are shared among the company's different services. The system should be able to support concurrent connections from users across those few services.
 
 ## Solution
 I adopted a cloud-native architecture in the system design of the project. The whole system comprises a few microservices, such as serverless functions, queues and an event bus, to process data and handle different kinds of workload.
