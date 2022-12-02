@@ -21,26 +21,29 @@ I helped a design institute to build a large-scale online learning platform for 
 
 ---content
 ---
-# Background
+## Background
 HKDI is an influential design institutions in Hong Kong. It provides high-quality education to nurture design talents. Design Thinking is one of its fundamental courses. While Design Thinking requires hands-on practices, the school's existing online learning portal could not support this need. The school decided to establish a new online learning platform, which should be interactive and collaborative, to support the learning and teaching of the course.
 
-# Challenges
-Collaboration
+## Tasks
+- **System Design:** Design a secured and performant system that supports concurrent connections from thousands of students.
+- **Course Module:** Develop a learning management portal that supports various types of components with auto-graded quizzes.
+- **Digital Artboard:** Develop a collaborative Digital Artboard that supports multi-users with a low latency.
 
-Privacy & Security
+## Challenges
+This project was a very challenging one, because it comprised many highly interactive modules. I led a team of three to develop different features of the platform. Among the modules, I developed the Course and the Digital Artboard module, which are the essential features of the platform.
 
+For the course module, the client would like to have 3D world as a landing page to attract students. As students usually used their own computers to visit the portal, it was a big challenge to build and optimize a 3D environment on web browsers to support computers with diverse hardware configurations.
 
-# Solution
-## Microservice Architecture
+The Digital Artboard is another major feature. With my experience of studying the Master's Degree in Interaction Design, I understood the importance of collaboration and communication to Design Thinking practices. It was challenging to build a low latency collaboration experience.
 
-## Course
-(eight types of components)
+## Solution
+<Image src="/images/projects/hkdi_dt_3d.jpg" alt="Screen capture of 3D world" caption="I built a 3D world which contains five zones to represent five groups of skills in Design Thinking" />
+I built the web-based 3D World with Babylon.js, which is a powerful 3D graphics engine. The performance in the first version was not satisfying. I put efforts to uplift the performance by reducing the computation in each frame and optimizing the 3D models. After that, the 3D world could finally reach at least 40 frames per second in general.
 
-## Collaborative Tools
-Other than the course content, the platform also provides a few collaborative tools. For instance, I developed a collaborative digital artboard that users could brainstorm and co-work in real-time. The artboard ... [features]. [tech stack]
 <Image src="/images/projects/hkdi_dt_artboard.jpg" alt="Screen capture of Digital Artboard" caption="Digital artboard supports multi-user collaboration and various drawing tools" />
+For the collaborative Digital Artboard, I designed a data schema to represent objects on the artboard and a protocol to support real-time collaboration. I then developed the artboard with a canvas library Fabric.js and used Socket.IO to achieve low-latency communication across users.
 
-# Result
+## Result
 <BlockQuote by="A student in a pilot run session">
 The platform has a friendly user experience and pleasant interface. It is much more attractive and easy-to-use than our existing online learning portal.
 </BlockQuote>
