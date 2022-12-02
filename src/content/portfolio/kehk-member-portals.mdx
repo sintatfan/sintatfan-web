@@ -40,6 +40,11 @@ The company had various systems used by different businesses. When I designed th
 ## Solution
 I adopted a cloud-native architecture in the system design of the project. The whole system comprises a few microservices, such as serverless functions, queues and an event bus, to process data and handle different kinds of workload.
 
+<Image src="/images/projects/kehk_systemarchitecture.png" alt="System design of the payment module"
+       caption={
+           <>System design of the payment module. <div className="italic font-light">(A simplified version omitting some internal components.)</div></>
+       } />
+
 The core of the system is a few Node.js applications running on AWS Lambda connected from Amazon API Gateway. With the event bus and queues components, the payment module supports concurrent requests and processed 100K transactions in the first year.
 
 As the format of orders varies from providers, I proposed to use a document-oriented database MongoDB, instead of a traditional relational database, to store the order data, which is high-performance, flexible but still easy to manage. Under an agile development cycle, this approach allowed my teammate and me to update the system effortlessly subject to the change of business requirements.
