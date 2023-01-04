@@ -13,7 +13,7 @@ export function LandingContent() {
             <div className="text-4xl 2xl:text-5xl leading-tight 2xl:leading-tight">
                 I <span className="text-gradient font-bold">design</span>, <span
                 className="text-gradient font-bold">develop</span> and <span
-                className="text-gradient font-bold">optimize</span> software that solve problems and delight people.
+                className="text-gradient font-bold">optimize</span> software that solves problems and delights people.
             </div>
         </div>
     );
