@@ -7,7 +7,7 @@ export function Biography() {
                      className="rounded-full mx-auto md:mb-4 w-24 sm:w-32 md:w-auto" />
 
                 <div className="flex-auto">
-                    <div className="text-2xl font-bold">Sin-Tat Fan</div>
+                    <div className="text-2xl font-bold">Terence Fan</div>
                     <div className="font-light">
                         <abbr title="Master in Design" className="no-underline">MDes</abbr> (Interaction Design)<br />
                         <abbr title="Bachelor of Science" className="no-underline">BSc</abbr> in Computer Science
@@ -19,7 +19,7 @@ export function Biography() {
             <div className="flex-auto max-w-3xl">
                 <p className="text-3xl sm:text-4xl lg:text-5xl mb-3">Computer Science is <br />an <span className="text-gradient font-bold">art of problem solving</span>.</p>
                 <div className="text-lg">
-                    <p className="mb-3">I&apos;m a passionate and competent Software Developer with over 9 years of experience in web development. I enjoy crafting engaging frontend and developing robust applications.</p>
+                    <p className="mb-3">I&apos;m a passionate and competent Software Developer with over 10 years of experience in web development. I enjoy crafting engaging frontend and developing robust applications.</p>
                     <p>With my background in Computer Science and Interaction Design, as well as my solid work experience, I&apos;m eager to help companies build elegant digital solutions that solve problems, engage with people and boost productivity.</p>
                 </div>
             </div>

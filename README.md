@@ -1,4 +1,4 @@
-# Sin-Tat's Personal Website
+# Terence's Personal Website
 This is the repository of my personal website, which introduced my background, vision and some selected projects.  
 
 **[Visit my website](https://sintat.fan)**

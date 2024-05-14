@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <div className={`${inter.variable} font-sans selection:bg-primary-light/60`}>
             <Head>
-                <title>Sin-Tat FAN | Full Stack Developer</title>
+                <title>Terence Fan | Full Stack Developer</title>
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
                 <meta name="description" content="A Canada-based Full Stack Developer devoted to crafting pixel-perfect website and robust backend." />
                 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />

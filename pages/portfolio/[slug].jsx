@@ -7,7 +7,7 @@ const PortfolioDetailsPage = function ({meta, contentSource, introductionSource,
     return (
         <>
             <Head>
-                <title>{meta.title} | Sin-Tat FAN</title>
+                <title>{meta.title} | Terence Fan</title>
                 <meta property="og:image" content={meta.bannerImage || meta.coverImage || '/images/ogimg.png'} />
                 <meta property="og:description" content={meta.excerpt} />
             </Head>

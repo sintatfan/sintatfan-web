@@ -3,7 +3,7 @@ export function LandingContent() {
         <div className="py-12 lg:py-0">
             <div className="mb-6">
                 <div className="font-bold text-4xl">
-                    Hello, I&apos;m <span className="text-gradient">Sin-Tat</span>.
+                    Hello, I&apos;m <span className="text-gradient">Terence</span>.
                 </div>
                 <div className="font-light">
                     <span className="text-2xl">Fullstack Developer</span> - <span className="inline-block">Frontend Dev</span> | <span className="inline-block">Backend Dev</span> | <span className="inline-block">UX Architect</span>
